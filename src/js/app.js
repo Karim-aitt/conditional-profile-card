@@ -29,6 +29,22 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  if (variables.name === null) {
+    variables.name = "";
+  }
+  if (variables.role === null) {
+    variables.role = "";
+  }
+  if (variables.lastname === null) {
+    variables.lastname = "";
+  }
+  if (variables.city === null) {
+    variables.city = "";
+  }
+  if (variables.country === null) {
+    variables.country = "";
+  }
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -65,11 +81,11 @@ window.onload = function() {
     github: "alesanchezr",
     linkedin: null,
     instagram: null,
-    name: "Karim",
-    lastname: "Gonzalez",
-    role: "Junior",
-    country: "Spain",
-    city: "Cádiz"
+    name: null,
+    lastname: null,
+    role: null,
+    country: null,
+    city: null
   };
   render(window.variables); //render the card for the first time
 
